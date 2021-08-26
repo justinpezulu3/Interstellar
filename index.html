@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="description" content="Embark on a journey of discovery with the Hubble Space Telescope.">
+      <meta name="description" content="Interstellar provides some of the best information on the Web about the universe. You can see the latest space news. You can even monitor space missions. The site has a "SpaceViews" section offering up pictures and videos for you to see what's out there.">
+      <meta name="description" content="Interstellar:astronomical and space">
+      <meta name="theme-color" content="#0093D5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="theme-color" content="#0093D5">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="in.css">
+  	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css">
+  <title>Interstellar</title>
+</head>
+
+<body>
+  <!-- Showcase & Nav -->
+  <div id="showcase">
+    <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a href="#showcase">Interstellar</a>
+          </li>
+          <li>
+            <a href='https://www.nasa.gov/'target="_blank">NASA</a>
+          </li>
+          <li>
+            <a href='https://hubblesite.org/' target="_blank">Hubble</a>
+          </li>
+          <li>
+            <a href='https://mars.nasa.gov/insight/mission/overview/' target="_blank">Mars</a>
+          </li>
+          <li>
+            <a href='https://mars.nasa.gov/insight/multimedia/videos/?page=0&per_page=25&order=pub_date+desc&search=&category=53%3A183&url_suffix=%3Fsite%3Dinsight'target="_blank">Multimedia</a>
+          </li>
+            <li>
+            <a href='https://viewspace.org/' target="_blank">Viewspace</a>
+          </li>
+            <li>
+          </li>
+        </ul>
+        <a href='#' id='openup'>Interstellar</a>
+      </nav>
+    </header>
+    <div class="section-main container">
+      <h1>Interstellar.</h1>
+      <h2>Welcome.</h2>
+      <h3>Discover and Explore the cosmos beyond our own planet.</h3>
+      <p class="lead hide-on-small">
+        
+      </p>
+    </div>
+  </div>
+
+  <!-- Music Section -->
+  <section id="music" class="section">
+    <div class="container">
+      <h2 class="section-head">
+        
+      </h2>
+      <h3>Interstellar Home of Science and Astronomy.</h3>
+      <p class="lead">Who hasn't felt a sense of awe while stargazing, lit with countless stars on a clear night? Who hasn't asked themselves if ours is the only planet that supports life? Astronomy is a science that seeks to explain everything that we observe in the Universe, from the comets and planets in our own solar system to distant galaxies to the echoes of the Big Bang. By studying the cosmos beyond our own planet, we can understand where we came from, where we are going, and how physics works under conditions which are impossible to recreate on Earth. In astronomy, the Universe is our laboratory!.</p>
+      <a href="video.html" target="_blank"class="btn btn-primary mb">Videos</a>
+      <p class="text-light"></p>
+      
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video" class="section bg-light">
+    <div class="container">
+      <h3>Astronomy Picture of the Day</h3>
+          <div class="title"></div>
+           <div class ="apod" ></div>
+           <div class="let" ></div>
+           <a href="MarsWeather.html" class="btn btn-secondary">Mars Weather Forecast</a>
+    </div>
+  </section>
+
+  <!-- Entertainment Section -->
+  <section id="entertainment" class="section">
+    <div class="container">
+      <h3>A world of Astronomy. Available wherever you are.</h3>
+      <p class="lead"></p>
+    </div>
+  </section>
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>Interstellar
+                </h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            
+            <div class="social">
+                <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.10.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.10.0/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="Apod.js"></script>
+
+  <script >
+    // nav menu
+  	$(function() {
+  menu = $('nav ul');
+
+  $('#openup').on('click', function(e) {
+    e.preventDefault();
+    menu.slideToggle();
+  });
+
+  $(window).resize(function() {
+    var w = $(this).width();
+    if (w > 480 && menu.is(':hidden')) {
+      menu.removeAttr('style');
+    }
+  });
+
+  $('nav li').on('click', function(e) {
+    var w = $(window).width();
+    if (w < 480) {
+      menu.slideToggle();
+    }
+  });
+  $('.open-menu').height($(window).height());
+});
+
+// Smooth Scrolling
+$('.cf a').on('click', function(event) {
+  if (this.hash !== '') {
+    event.preventDefault();
+
+    const hash = this.hash;
+
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top
+      },
+      800,
+      function() {
+        window.location.hash = hash;
+      }
+    );
+  }
+});
+</script>
+</body>
+
+</html>

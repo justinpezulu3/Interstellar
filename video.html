@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge>
+ 	<meta name="description" content="The solar system" >
+
+  <meta name="description" content="discover and explore our Universe with a collection of free web based Videos" >
+  <meta name="theme-color" content=" #0093D5" >
+<title>Interstellar: Videos</title>
+     <link rel="stylesheet" href="https://bootswatch.com/3/cyborg/bootstrap.min.css">
+<style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+#play{
+  display: flex;
+  justify-content: center;
+  
+}
+#player{
+ width: 480px;
+  height: 270px;
+  align-items: center;
+}
+#nav{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+#nav>a{
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+}
+	#nav img {border: solid 5px #fff}
+	</style>
+</head>
+<body>
+	    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="Movies.html">Interstellar</a>
+        </div>
+      </div>  
+    </nav>
+  <div id="play">
+	<div id="player"></div>  
+	</div>
+
+
+    <div id="nav">
+<a href="#ytplayer" ><img src="http://img.youtube.com/vi/libKVRa01L8/default.jpg" /></a>
+<a href="#ytplayer" ><img src="http://img.youtube.com/vi/D8pnmwOXhoY/default.jpg" /></a>
+<a href="#ytplayer" ><img src="http://img.youtube.com/vi/6AviDjR9mmo/default.jpg" /></a>
+<a href="#ytplayer"> <img src="http://img.youtube.com/vi/BvXa1n9fjow/default.jpg" /></a>
+<a href="#ytplayer"> <img src="http://img.youtube.com/vi/m4NXbFOiOGk/default.jpg" /></a>
+<a href="#ytplayer"> <img src="http://img.youtube.com/vi/Elv3WpL32UE/default.jpg" /></a>
+
+
+</div>
+</body>
+<script>
+window.onload = function(){
+    var a = document.getElementsByTagName("a");
+    for(var i=0; i<a.length; i++){
+        if(!/#ytplayer/.test(a[i].href)) continue;
+        var link = a[i].innerHTML.match(/\/vi\/([^\/]+)/);
+        if(link) (function(vidId){
+            a[i].onclick = function(){
+                player.loadVideoById(vidId);
+            }
+        })(link[1]);
+    }
+}
+
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "http://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+
+function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'D8pnmwOXhoY',
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// 4. The API will call this function when the video player is ready.
+
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+    }
+}
+
+function stopVideo() {
+    player.stopVideo();
+}
+</script>
+</body>
+</html>
