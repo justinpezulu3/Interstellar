@@ -15,7 +15,7 @@
   }
   
   function useApiData(data){
-  	document.querySelector(". title").innerHTML += data.title
+  	document.querySelector(".title").innerHTML += data.title
    document.querySelector(".apod").innerHTML += `<img src="${data.url}">`
     document.querySelector(".let").innerHTML += data.explanation
   }
